@@ -48,8 +48,8 @@ from langchain_nvidia_ai_endpoints import ChatNVIDIA, NVIDIAEmbeddings
 
 # make sure to export your NVIDIA AI Playground key as NVIDIA_API_KEY!
 llm = ChatNVIDIA(model="mixtral_8x7b")
-document_embedder = NVIDIAEmbeddings(model="ai-embed-qa-4", model_type="passage")
-query_embedder = NVIDIAEmbeddings(model="ai-embed-qa-4", model_type="query")
+document_embedder = NVIDIAEmbeddings(model="nv-embed-v1", model_type="passage")
+query_embedder = NVIDIAEmbeddings(model="nv-embed-v1", model_type="query")
 
 ############################################
 # Component #3 - Vector Database Store
