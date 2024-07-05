@@ -47,7 +47,7 @@ with st.sidebar:
 from langchain_nvidia_ai_endpoints import ChatNVIDIA, NVIDIAEmbeddings
 
 # make sure to export your NVIDIA AI Playground key as NVIDIA_API_KEY!
-llm = ChatNVIDIA(model="ai-llama3-70b")
+llm = ChatNVIDIA(model="mixtral_8x7b")
 document_embedder = NVIDIAEmbeddings(model="ai-embed-qa-4", model_type="passage")
 query_embedder = NVIDIAEmbeddings(model="ai-embed-qa-4", model_type="query")
 
@@ -116,7 +116,7 @@ prompt_template = ChatPromptTemplate.from_messages(
     [("system", "You are a helpful AI assistant named Envie. You will reply to questions only based on the context that you are provided. If something is out of context, you will refrain from replying and politely decline to respond to the user."), ("user", "{input}")]
 )
 user_input = st.chat_input("Can you tell me what NVIDIA is known for?")
-llm = ChatNVIDIA(model="ai-llama3-70b")
+llm = ChatNVIDIA(model="mixtral_8x7b")
 
 chain = prompt_template | llm | StrOutputParser()
 
